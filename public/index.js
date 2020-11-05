@@ -123,6 +123,12 @@ const app = new Vue({
                 }
             }
             this.updatePreco()
+        },
+        finalizarPedido(pedido){
+            socket.emit('finalizarPedido', {
+                pedido,
+                token: window.localStorage.getItem('token')
+            })
         }
     }
 })

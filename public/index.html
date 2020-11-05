@@ -62,6 +62,10 @@
                                     </div>
 
                                     <span>Valor total R${{ ped.preco * parseInt(ped.quantidade) + adicionalValor }}</span>
+                                    <br><br>
+                                    <button 
+                                    @click="finalizarPedido(pedido)"
+                                    class="logged button is-link">Finalizar pedido</button>
                                 </div>
                             </div>
                         </li>

@@ -60,6 +60,18 @@ io.on('connection', socket => {
 			socket.emit('authed', true)
 		}
 	})
+	socket.on('finalizarPedido', data => {
+		if(data.token == token){
+			if(data.pedido){
+				const found = pedidos.find(e => e.id == data.pedido.id)
+				if(found){
+					const id = pedidos.indexOf(found)
+					pedidos.splice(id, 1)
+					io.sockets.in(`brot`).emit('novoPedido', pedidos)
+				}
+			}
+		}
+	})
 })
 
 server.listen(porta, () => {
