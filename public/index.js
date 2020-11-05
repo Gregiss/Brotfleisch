@@ -89,6 +89,7 @@ const app = new Vue({
             }).showToast();
             socket.emit('card')
             this.cliemte = ""
+            this.total = 0
         }
         },
         addAdicional(ad, id, lanche){  
