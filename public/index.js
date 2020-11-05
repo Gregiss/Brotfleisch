@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8080');
+const socket = io('https://brotfleisch.herokuapp.com/');
 const sound = new Audio('./notifica.wav')
 
 const app = new Vue({
