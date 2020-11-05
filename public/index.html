@@ -17,7 +17,7 @@
             <img class="logo" src="./logo.png"/>
             <form @submit="entrar">
                 <input v-model="login" class="input" type="text" placeholder="Usuário">
-                <input v-model="senha" class="input" type="password" placeholder="Senha">
+                <input v-model="senha" class="input" type="text" placeholder="Senha">
                 <button class="logged button is-link">Entrar</button>
             </form>
         </div>
@@ -64,7 +64,7 @@
                                     <span>Valor total R${{ ped.preco * parseInt(ped.quantidade) + adicionalValor }}</span>
                                     <br><br>
                                     <button 
-                                    @click="finalizarPedido(pedido)"
+                                    @click="finalizarPedido(pedido, ped)"
                                     class="logged button is-link">Finalizar pedido</button>
                                 </div>
                             </div>

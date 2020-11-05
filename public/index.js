@@ -1,4 +1,4 @@
-const socket = io('https://brotfleisch.herokuapp.com');
+const socket = io('http://localhost:8080');
 const sound = new Audio('./notifica.wav')
 
 const app = new Vue({
@@ -124,9 +124,10 @@ const app = new Vue({
             }
             this.updatePreco()
         },
-        finalizarPedido(pedido){
+        finalizarPedido(pedido, ped){
             socket.emit('finalizarPedido', {
                 pedido,
+                ped,
                 token: window.localStorage.getItem('token')
             })
         }

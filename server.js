@@ -58,8 +58,13 @@ io.on('connection', socket => {
 				const found = pedidos.find(e => e.id == data.pedido.id)
 				if(found){
 					const id = pedidos.indexOf(found)
-					pedidos.splice(id, 1)
-					io.sockets.in(`brot`).emit('novoPedido', pedidos)
+					const foundPedido = pedidos[id].pedidos.find(e => e.name == data.ped.name && e.quantidade == data.ped.quantidade)
+					console.log(data.ped)
+					if(foundPedido){
+						const pedidoId = pedidos[id].pedidos.indexOf(foundPedido)
+						pedidos[id].pedidos.splice(pedidoId, 1)
+						io.sockets.in(`brot`).emit('novoPedido', pedidos)
+					}
 				}
 			}
 		}
