@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Batata frita normal",
+        "preco": 5.00,
+        "turbine": true,
+        "sabores": []
+    },
+    {
+        "name": "Batata rústica",
+        "preco": 4.00,
+        "turbine": true,
+        "sabores": []
+    },
+    {
+        "name": "Bacon 100g",
+        "preco": 5.00,
+        "turbine": true,
+        "sabores": []
+    },
+    {
+        "name": "Calabresa 100g",
+        "preco": 5.00,
+        "turbine": true,
+        "sabores": []
+    },
+    {
+        "name": "Hamburger 200g",
+        "preco": 6.00,
+        "turbine": true,
+        "sabores": []
+    },
+    {
+        "name": "Hamburger 120g",
+        "preco": 5.00,
+        "turbine": true,
+        "sabores": []
+    }
+]

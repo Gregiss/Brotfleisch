@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brotfleisch</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <div v-if="!logged" class="login">
+            <img class="logo" src="./logo.png"/>
+            <form @submit="entrar">
+                <input v-model="login" class="input" type="text" placeholder="Usuário">
+                <input v-model="senha" class="input" type="text" placeholder="Senha">
+                <button class="logged button is-link">Entrar</button>
+            </form>
+        </div>
+        <div v-if="logged" class="logged">
+            <div class="top">
+                <div class="logo">
+                    <img class="logo" src="./logo.png"/>
+                </div>
+            </div>
+            <div class="left">
+
+            </div>
+            <div class="center">
+                <div class="white" :class="{ 'centerNop' : path.includes('/pedidos')}">
+                    <div v-if="path.includes('/pedidos')" class="pedidos">
+                        <h1>
+                            Pedidos
+                        </h1>
+                        <li v-for="pedido in pedidos">
+                            <div 
+                            v-for="ped in pedido.pedidos"
+                            v-if="parseInt(ped.quantidade) > 0">
+                                <h1>
+                                    #{{ pedido.id }}
+                                </h1>
+                                <h2>
+                                    {{ pedido.cliente }}
+                                </h2>
+                                <p></p>
+                                <div class="pedido">
+                                    <span>
+                                        {{ ped.name }} x{{ ped.quantidade }}
+                                    </span>
+                                    <div style="opacity: 0;">
+                                        {{ adicionalValor = 0 }}
+                                    </div>
+                                    <div 
+                                    v-for="adicional in pedido.adicional"
+                                    v-if="adicional.Lanche == ped.name">
+                                        <span>++ {{ adicional.adicional }} x{{ adicional.qt}}</span>
+                                        {{ adicionalValor += adicional.preco * adicional.qt }}
+                                    </div>
+
+                                    <span>Valor total R${{ ped.preco * parseInt(ped.quantidade) + adicionalValor }}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                <div class="white" v-if="!path.includes('/pedidos')" class="pedidos">
+                    <h1>Novo pedido</h1>
+                    <input
+                    class="input"
+                    style="width: 400px; margin: 10px;"
+                    v-model="cliente" placeholder="Nome cliente"/>
+                    <li class="pedir" v-for="car in cardapio">
+                        <p>{{ car.name }} - R${{ car.preco }}</p>
+                        <div v-if="car.lanche != undefined">
+                            <p>Adicional:</p>
+                            <br><br>
+                            <p 
+                            v-for="ad in adicional">
+                                <strong :class="{ 'added': pedidoCardapio[pedidoCardapio.indexOf(car)].adicional.find(e => e.name == ad.name) }">
+                                    <span 
+                                    @click="addAdicional(ad, pedidoCardapio.indexOf(car), car.name)"
+                                    class="transparent"></span>
+                                    <i 
+                                    @click="removeAdicional(ad, pedidoCardapio.indexOf(car), car.name)"
+                                    v-if="pedidoCardapio[pedidoCardapio.indexOf(car)].adicional.find(e => e.name == ad.name)"
+                                    class="fas fa-minus"></i>
+                                    {{ totalAdicional.find(e => e.lanche == car.name && ad.name == e.adicional) }}
+                                    {{ ad.name }}
+                                    <span class="total" v-if="totalAdicional.find(e => e.Lanche == car.name && e.adicional == ad.name)">
+                                        {{ totalAdicional.find(e => e.Lanche == car.name && e.adicional == ad.name).qt }}
+                                    </span>
+                                </strong>
+                                <br>
+                            </p>
+                            <br>
+                            <br>    
+                        </div>
+                        <input 
+                        @change="updatePreco"
+                        min="0"
+                        v-model="pedidoCardapio[pedidoCardapio.indexOf(car)].quantidade" placeholder="Quantidade" type="number">
+                    </li>
+                    <h1>
+                        Total R$ {{ total }}
+                    </h1>
+                    <button 
+                    @click="novoPedido"
+                    class="logged button is-link enviarPedido">Enviar pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

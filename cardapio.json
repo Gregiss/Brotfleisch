@@ -1,0 +1,180 @@
+[
+    {
+        "name": "Pão com Bolinho",
+        "preco": 9.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X Salada",
+        "preco": 15.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X EGG",
+        "preco": 16.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X Bacon",
+        "preco": 18.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X Calabresa",
+        "preco": 18.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X Frango",
+        "preco": 18.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "X Coração",
+        "preco": 18.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Brotfleisch",
+        "preco": 20.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Peter strabe",
+        "preco": 25.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Holstein",
+        "preco": 24.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Pomerânia",
+        "preco": 23.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Aymoré",
+        "preco": 24.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Imigrantes",
+        "preco": 23.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Lageado",
+        "preco": 25.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Longe strabe",
+        "preco": 26.00,
+        "sabores": [],
+        "lanche": true
+    },
+    {
+        "name": "Água mineral",
+        "preco": 3.00,
+        "bebidas": true,
+        "sabores": []
+    },
+    {
+        "name": "Refrigerante lata",
+        "preco": 5.00,
+        "bebidas": true,
+        "sabores": []
+    },
+    {
+        "name": "Sucos",
+        "preco": 7.00,
+        "bebidas": true,
+        "sabores": ["Laranja", "Uva"]
+    },
+    {
+        "name": "Caipirinha",
+        "preco": 15.00,
+        "bebidas": true,
+        "sabores": ["Tradicional", "Vinho"]
+    },
+    {
+        "name": "Cerveja garrafa",
+        "preco": 10.50,
+        "bebidas": true,
+        "sabores": ["600ml", "Brahma", "Skol", "Antarctica"]
+    },
+    {
+        "name": "Cerveja garrafa",
+        "preco": 13.00,
+        "bebidas": true,
+        "sabores": ["600ml", "Brahma", "Skol", "Ant. Original"]
+    },
+    {
+        "name": "Chopp pilsen caneco",
+        "preco": 6.00,
+        "bebidas": true,
+        "sabores": ["300ml"]
+    },
+    {
+        "name": "Chopp garrafa",
+        "preco": 6.00,
+        "bebidas": true,
+        "sabores": ["500ml", "Ipa", "Stout", "Wibier", "Weiss"]
+    },
+    {
+        "name": "Batata frita rústica",
+        "preco": 16.00,
+        "sabores": []
+    },
+    {
+        "name": "Batata frita palito",
+        "preco": 16.00,
+        "sabores": []
+    },
+    {
+        "name": "Batata frita com bacon",
+        "preco": 16.00,
+        "sabores": []
+    },
+    {
+        "name": "Batata frita com bacon e cheddar",
+        "preco": 17.00,
+        "sabores": []
+    },
+    {
+        "name": "Aipim frito",
+        "preco": 18.00,
+        "sabores": []
+    },
+    {
+        "name": "Polenta frito",
+        "preco": 15.00,
+        "sabores": []
+    }, 
+    {
+        "name": "Coxinha da asa",
+        "preco": 20.00,
+        "sabores": []
+    },
+    {
+        "name": "Bolinho de carne",
+        "preco": 27.00,
+        "sabores": []
+    }
+]

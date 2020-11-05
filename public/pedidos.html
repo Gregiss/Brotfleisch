@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brotfleisch - Pedidos</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/bulma-rtl.min.css">
+</head>
+<body>
+    <div id="app">
+        <div v-if="!logged" class="login">
+            <img class="logo" src="./logo.png"/>
+            <form @submit="entrar">
+                <input v-model="login" class="input" type="text" placeholder="Usuário">
+                <input v-model="senha" class="input" type="text" placeholder="Senha">
+                <button class="logged button is-link">Entrar</button>
+            </form>
+        </div>
+        <div class="logged">
+            <div class="top">
+                <div class="logo">
+                    <img class="logo" src="./logo.png"/>
+                </div>
+            </div>
+            <div class="left">
+
+            </div>
+            <div class="center">
+                <div class="white">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
