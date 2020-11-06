@@ -41,6 +41,7 @@ const app = new Vue({
         }
         socket.on('token', token => {
             window.localStorage.setItem('token', token)
+            vue.logged = true
         })
         socket.on('authed', () => {
             vue.logged = true
